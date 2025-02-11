@@ -36,4 +36,9 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cloud-clipboard:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/webwork:latest
+          build-args: |
+            WEBWORK2_GIT_URL=${{ env.WEBWORK2_GIT_URL }}
+            WEBWORK2_BRANCH=${{ env.WEBWORK2_BRANCH }}
+            PG_GIT_URL=${{ env.PG_GIT_URL }}
+            PG_BRANCH=${{ env.PG_BRANCH }}
