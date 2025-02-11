@@ -5,8 +5,13 @@ on:
 
 jobs:
   docker:
-    name: Building and Pushing Node.js Multi-arch Docker Image
+    name: Building and Pushing Multi-arch Docker Image
     runs-on: ubuntu-latest
+    env:
+      WEBWORK2_GIT_URL: https://github.com/openwebwork/webwork2.git
+      WEBWORK2_BRANCH: main
+      PG_GIT_URL: https://github.com/openwebwork/pg.git
+      PG_BRANCH: main
     steps:
       - uses: actions/checkout@v3
 
